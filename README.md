@@ -20,7 +20,7 @@ And then run services.py in your terminal.
  2. Retrieve a vehicle
  3. Exit
 # sample input-1
-Enter your choice: 1  (User have to enter choices, like 1 or 2 or 3, to subscribe the service)
+Enter your choice: 1  (User have to enter choices, like 1 or 2 or 3, to subscribe the service)<br>
 Enter the vehicle number: "DL12X1234" (user have to enter vehicle number)
 
 # sample outputs-1
