@@ -12,7 +12,7 @@ unique identifier of the vehicle.) output should return level and parking spot n
 
 # How to use
 To use parking lot tracker, user have to have installed python 3.6+ version on their system.
-And then run services.py in your terminal
+And then run services.py in your terminal.
 
 
 # Sample inputs and behaviour
@@ -21,17 +21,14 @@ And then run services.py in your terminal
  2. Retrieve a vehicle
  3. Exit
 ******************************
+# sample input-1
 Enter your choice: 1  (User have to enter choices, like 1 or 2 or 3, to subscribe the service)
 Enter the vehicle number: "DL12X1234" (user have to enter vehicle number)
 
 # sample outputs-1
 Vehicle with vehicle number "DL12X1234" is successfully parked.
 
-******************************
- 1. Park a vehicle
- 2. Retrieve a vehicle
- 3. Exit
-******************************
+# sample input-2
 Enter your choice: 2
 Enter the vehicle number: "DL12X1235"
 
