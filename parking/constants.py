@@ -7,3 +7,5 @@ VEHICLE_PARKED_SUCCESSFULLY = 'Vehicle with vehicle number "%s" is successfully 
 PARKING_LOT_IS_FULL = 'parking lot is full!'
 VEHICLE_NOT_PARKED_YET = 'Vehicle with vehicle number "%s" is not parked yet.'
 INVALID_VEHICLE_NUMBER = 'Invalid vehicle number!'
+MAXIMUM_ATTEMPT_ALLOWED = 3
+MAXIMUM_ATTEMPT_EXCEEDED = 'Maximum attempt exceeded!'
