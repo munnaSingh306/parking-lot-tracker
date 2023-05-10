@@ -21,14 +21,14 @@ And then run services.py in your terminal.
  3. Exit
 # sample input-1
 Enter your choice: 1  (User have to enter choices, like 1 or 2 or 3, to subscribe the service)<br>
-Enter the vehicle number: "DL12X1234" (user have to enter vehicle number)
+Enter the vehicle number: "DL12XP1234" (user have to enter vehicle number)
 
 # sample outputs-1
-Vehicle with vehicle number "DL12X1234" is successfully parked.
+Vehicle with vehicle number "DL12XP1234" is successfully parked.
 
 # sample input-2
 Enter your choice: 2
-Enter the vehicle number: "DL12X1235"
+Enter the vehicle number: "DL12XP1235"
 
 # sample outputs-2
 {'level': 'A', 'spot': 1}
