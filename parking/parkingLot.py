@@ -7,29 +7,26 @@ from parking.constants import (TOTAL_PARKING_LOTS,
 
 class ParkingLot:
     def __init__(self):
-        self.parking_spots = [None] * TOTAL_PARKING_LOTS
-
-    def get_parking_level_and_spot(self, parking_spot_index: int) -> dict:
-
-        parking_level = "A" if parking_spot_index < PER_LEVEL_TOTAL_SLOTS else "B"
-        parking_spot = parking_spot_index % PER_LEVEL_TOTAL_SLOTS + 1
-        return {"level": parking_level, "spot": parking_spot}
+        self.available_spots = set(range(TOTAL_PARKING_LOTS))
+        self.vehicle_spots = {}
 
     def assign_spot(self, vehicle_number: str) -> str:
+        if vehicle_number in self.vehicle_spots:
+            return VEHICLE_ALREADY_PARKED % vehicle_number
 
-        for i, spot in enumerate(self.parking_spots):
-            if spot is None and vehicle_number not in self.parking_spots:
-                self.parking_spots[i] = vehicle_number
-                return VEHICLE_PARKED_SUCCESSFULLY % vehicle_number
+        if not self.available_spots:
+            return PARKING_LOT_IS_FULL
 
-            elif vehicle_number in self.parking_spots:
-                return VEHICLE_ALREADY_PARKED % vehicle_number
-
-        return PARKING_LOT_IS_FULL
+        parking_spot = self.available_spots.pop()
+        self.vehicle_spots[vehicle_number] = parking_spot
+        return VEHICLE_PARKED_SUCCESSFULLY % vehicle_number
 
     def get_parked_spot(self, vehicle_number: str) -> dict:
-        for i, spot in enumerate(self.parking_spots):
-            if spot == vehicle_number:
-                parking_details = self.get_parking_level_and_spot(parking_spot_index=i)
-                return parking_details
+        if vehicle_number in self.vehicle_spots:
+            parking_spot = self.vehicle_spots.get(vehicle_number)
+            if not parking_spot:
+                return {}
+            parking_level = "A" if parking_spot < PER_LEVEL_TOTAL_SLOTS else "B"
+            parking_spot = parking_spot % PER_LEVEL_TOTAL_SLOTS + 1
+            return {"level": parking_level, "spot": parking_spot}
         return {}
