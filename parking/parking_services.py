@@ -21,6 +21,5 @@ def parking_service():
 
         elif choice == "3":
             break
-
         else:
             print(INVALID_CHOICE)
