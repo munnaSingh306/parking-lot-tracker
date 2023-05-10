@@ -9,3 +9,4 @@ VEHICLE_NOT_PARKED_YET = 'Vehicle with vehicle number "%s" is not parked yet.'
 INVALID_VEHICLE_NUMBER = 'Invalid vehicle number!'
 MAXIMUM_ATTEMPT_ALLOWED = 3
 MAXIMUM_ATTEMPT_EXCEEDED = 'Maximum attempt exceeded!'
+VEHICLE_NUMBER_PATTERN = r'^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$'
