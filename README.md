@@ -1,4 +1,4 @@
-# Parking-lot-tracker (Sampe assignment to assess code quality)
+# Parking-lot-tracker (Sample assignment to assess code quality)
 
 Problem Statement:-
 There is a parking lot and it has 2 levels A and B, each level has the capacity to park 20
