@@ -9,11 +9,11 @@ from parking.constants import (INVALID_VEHICLE_NUMBER,
 class Utility:
     prompt_count = 0
 
-    def is_valid_vehicle_number(self, vehicle_number: str) -> bool:
+    def validate_vehicle_number(self, vehicle_number: str) -> bool:
         vehicle_number = (vehicle_number or "").replace(" ", "")
-        if not (vehicle_number or re.match(VEHICLE_NUMBER_PATTERN, vehicle_number, re.I)):
-            return False
-        return True
+        if vehicle_number and re.match(VEHICLE_NUMBER_PATTERN, vehicle_number, re.I):
+            return True
+        return False
 
     def initial_prompt(self) -> str:
         print(f"\n{'*' * 30}", " 1. Park a vehicle", " 2. Retrieve a vehicle",
@@ -28,7 +28,7 @@ class Utility:
             sys.exit(MAXIMUM_ATTEMPT_EXCEEDED)
         vehicle_number = input("Enter the vehicle number:")
 
-        if not self.is_valid_vehicle_number(vehicle_number=vehicle_number):
+        if not self.validate_vehicle_number(vehicle_number=vehicle_number):
             print(INVALID_VEHICLE_NUMBER)
             self.input_prompt()
         self.prompt_count = 0
